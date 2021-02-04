@@ -21,4 +21,20 @@ def api_otraApp():
 def api_calc():
    return render_template('calculadora.html')
 
+@app.route("/api/calc/Suma/1/2")
+def api_calc_Suma_1_2():
+    return render_template('Suma.html')   
+
+@app.route("/api/calc/Resta/4/2")
+def api_calc_Resta_4_2():
+    return render_template('Resta.html')
+
+@app.route("/api/calc/Multiplicacion/5/5")
+def api_calc_Multiplicacion_5_5():
+    return render_template('Mul.html')
+
+@app.route("/api/calc/Division/8/2")
+def api_calc_Division_8_2():
+    return render_template('Div.html')
+
 
