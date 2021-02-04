@@ -1,8 +1,18 @@
-<nav>
-    <ul>
-        <li><a href="{{ url_for('Suma') }}">Suma</a></li>
-        <li><a href="{{ url_for('Resta') }}">Resta</a></li>
-        <li><a href="{{ url_for('Multiplicacion') }}">Multiplicacion</a></li>
-        <li><a href="{{ url_for('Division') }}">Division</a></li>  
-    </ul>
-</nav>
+<head>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('api_calc_Suma') }}">Suma</a></li>
+            <li><a href="{{ url_for('api_calc_Resta') }}">Resta</a></li>
+            <li><a href="{{ url_for('api_calc_Multiplicacion') }}">Multiplicacion</a></li>
+            <li><a href="{{ url_for('api_calc_Division') }}">Division</a></li>  
+        </ul>
+    </nav>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('api') }}">Regresar</a></li>
+        </ul>
+    </nav>
+</body>
