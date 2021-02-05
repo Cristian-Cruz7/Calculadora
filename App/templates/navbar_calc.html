@@ -1,18 +1,83 @@
 <head>
-    <nav>
-        <ul>
-            <li><a href="{{ url_for('api_calc_Suma_1_2') }}">Suma</a></li>
-            <li><a href="{{ url_for('api_calc_Resta_4_2') }}">Resta</a></li>
-            <li><a href="{{ url_for('api_calc_Multiplicacion_5_5') }}">Multiplicacion</a></li>
-            <li><a href="{{ url_for('api_calc_Division_8_2') }}">Division</a></li>  
-        </ul>
-    </nav>
+    <style>
+        .calc-container{
+            background-color: rgba(0,0,0,0.2);
+        }
+        .calc,td{
+            border: solid 1px black;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+        .igual{
+            width: 100%;
+        }
+    </style>    
 </head>
 
 <body>
     <nav>
         <ul>
+            <li><a href="{{ url_for('api_calc_Suma', num1=0, num2=0) }}">Suma</a></li>
+            <li><a href="{{ url_for('api_calc_Resta_4_2') }}">Resta</a></li>
+            <li><a href="{{ url_for('api_calc_Multiplicacion_5_5') }}">Multiplicacion</a></li>
+            <li><a href="{{ url_for('api_calc_Division_8_2') }}">Division</a></li>  
+        </ul>
+    </nav>
+
+    <nav>
+        <ul>
             <li><a href="{{ url_for('api') }}">Regresar</a></li>
         </ul>
     </nav>
+
+    <div class="calc-container">
+        <table class="calc">
+            <tr>
+                <td></td>
+                <td>Cristian </td>
+                <td>Cristian </td>
+                <td>Cristian </td>
+            </tr>
+            <tr>
+                <td>Cristian </td>
+                <td>Cristian </td>
+                <td>Cristian </td>
+                <td>Cristian </td>
+            </tr>
+            <tr>
+                <td>Cristian </td>
+                <td>Cristian </td>
+                <td>Cristian </td>
+                <td>Cristian </td>
+            </tr>
+            <tr>
+                <td> <button onclick="set_valor_1(1)"> 1 </button> </td>
+                <td> <button onclick="set_valor_2(2)"> 2 </button> </td>
+                <td> Cristian </td>
+                <td> <button class="igual" onclick="sumar()"> = </button> </td>
+            </tr>
+        </table>
+    </div>
+    <!-- etiqueta para colocar codigo js-->
+    <script>
+        //console.log('Me gusta la programacion desde la consola')
+        //alert('Me gusta la programación python,js,html,css') 
+        let val1 = '0';
+        let val2 = '0';
+
+        function sumar(){
+            const url = 'http://localhost:5000/api/calc/Suma/'
+            fetch(url + val1 + '/' + val2)
+                .then(response => response.json())
+                .then(data => console.log(data));
+        }
+
+        function set_valor_1(numero){
+            val1 += numero
+        }
+
+        function set_valor_2(numero){
+            val2 += numero
+        }
+    </script>
 </body>
