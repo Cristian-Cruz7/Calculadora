@@ -1,0 +1,30 @@
+.calc-container{
+    background-color: rgba(0,0,0,0.2);
+}
+.calc{
+    display:border;
+    margin:0 auto;
+    padding:20px;
+}
+
+.calc,td{
+    border: solid 1px black;
+    border-collapse: collapse;
+    padding: 5px;
+}
+.calc td button{
+    display: block;
+    width: 60px;
+    height: 60px;
+    font-size:20px;
+}
+#resultado{
+    display: block;
+    text-align: center;
+    font-size: 40px;        
+    margin-bottom: 2px;    /* margen inferior*/
+    height: 40px;
+    line-height: 40px; /* texto tamaño de altura de los resultados*/
+    background-color: white;
+
+}

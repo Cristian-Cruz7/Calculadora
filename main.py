@@ -21,22 +21,26 @@ def api_otraApp():
 def api_calc():
    return render_template('calculadora.html')
 
-@app.route("/api/calc/Suma/<num1>/<num2>")
-def api_calc_Suma(num1, num2):
+@app.route("/api/calc/Sumar/<num1>/<num2>")
+def api_calc_Sumar(num1, num2):
    resultado = int(num1) + int(num2)
    #return render_template('Suma.html', resultado = resultado, num1 = num1, num2 = num2)   
    return jsonify(resultado = resultado)
 
-@app.route("/api/calc/Resta/4/2")
-def api_calc_Resta_4_2():
-   return render_template('Resta.html')
-
-@app.route("/api/calc/Multiplicacion/5/5")
-def api_calc_Multiplicacion_5_5():
-   return render_template('Mul.html')
-
-@app.route("/api/calc/Division/8/2")
-def api_calc_Division_8_2():
-    return render_template('Div.html')
+@app.route("/api/calc/Restar/<num1>/<num2>")
+def api_calc_Restar(num1, num2):
+   resultado = int(num1) - int(num2)
+   return render_template('Resta.html', resultado = resultado, num1 = num1, num2 = num2)
+   
+@app.route("/api/calc/Multiplicar/<num1>/<num2>")
+def api_calc_Multiplicar(num1, num2):
+   resultado = int(num1) * int(num2)
+   return render_template('Mul.html', resultado = resultado, num1 = num1, num2 = num2)   
+   
+@app.route("/api/calc/Dividir/<num1>/<num2>")
+def api_calc_Dividir(num1, num2):
+   resultado = int(num1) / int(num2)
+   return render_template('Div.html', resultado = resultado, num1 = num1, num2 = num2)   
+   
 
 
