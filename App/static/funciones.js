@@ -1,118 +1,115 @@
-var valorUno;
-var valorDos;
-var operacion; 
+let valorUno;
+let valorDos;
+let operacion;
 
-function init(){
+const URL_API = 'http://localhost:5000/api/calc/';
+const SUMAR = 'sumar';
+const RESTAR = 'restar';
+const MUL = 'multiplicar';
+const DIV = 'dividir';
+
+function init() {
     //variables
 
-    var resultado = document.getElementById("resultado");
-    var uno = document.getElementById("uno");
-    var dos = document.getElementById("dos");
-    var tres = document.getElementById("tres");
-    var cuatro = document.getElementById("cuatro");
-    var cinco = document.getElementById("cinco");
-    var seis = document.getElementById("seis");
-    var siete = document.getElementById("siete");
-    var ocho = document.getElementById("ocho");
-    var nueve = document.getElementById("nueve");
-    var cero = document.getElementById("cero");
-    var sum = document.getElementById("sum");
-    var res = document.getElementById("res");
-    var mul = document.getElementById("mul");
-    var div = document.getElementById("div");
-    var del = document.getElementById("del");
-    var igual = document.getElementById("igual");
+    const resultado = document.getElementById("resultado");
+    const button1 = document.getElementById("uno");
+    const button2 = document.getElementById("dos");
+    const button3 = document.getElementById("tres");
+    const button4 = document.getElementById("cuatro");
+    const button5 = document.getElementById("cinco");
+    const button6 = document.getElementById("seis");
+    const button7 = document.getElementById("siete");
+    const button8 = document.getElementById("ocho");
+    const button9 = document.getElementById("nueve");
+    const button0 = document.getElementById("cero");
+    const sum = document.getElementById("sum");
+    const res = document.getElementById("res");
+    const mul = document.getElementById("mul");
+    const div = document.getElementById("div");
+    const del = document.getElementById("del");
+    const igual = document.getElementById("igual");
 
-        //eventos 
-        uno.onclick = function(e){  //al hacer clic en el boton, la funcion recibe el evento "e", luego a la variable
-        resultado.textContent = resultado.textContent + "1";  //resultado, le da el valor que tiene almacenado, pero
-    }                                               // le suma un uno a los datos ya almacenados
+    //eventos
+    addOnclickEvent(button1, '1');
+    /*uno.onclick = function(e) { //al hacer clic en el boton, la funcion recibe el evento "e", luego a la variable
+            resultado.textContent = resultado.textContent + "1"; //resultado, le da el valor que tiene almacenado, pero
+        } // le suma un uno a los datos ya almacenados*/
 
-    dos.onclick = function(e){
-        resultado.textContent = resultado.textContent + "2";
-    }
+    addOnclickEvent(button2, '2');
+    addOnclickEvent(button3, '3');
+    addOnclickEvent(button4, '4');
+    addOnclickEvent(button5, '5');
+    addOnclickEvent(button6, '6');
+    addOnclickEvent(button7, '7');
+    addOnclickEvent(button8, '8');
+    addOnclickEvent(button9, '9');
+    addOnclickEvent(button0, '0');
 
-    tres.onclick = function(e){
-        resultado.textContent = resultado.textContent + "3";
-    }
 
-    cuatro.onclick = function(e){
-        resultado.textContent = resultado.textContent + "4";
-    }
-
-    cinco.onclick = function(e){
-        resultado.textContent = resultado.textContent + "5";
-    }
-
-    seis.onclick = function(e){
-        resultado.textContent = resultado.textContent + "6";
-    }
-
-    siete.onclick = function(e){
-        resultado.textContent = resultado.textContent + "7";
-    }
-
-    ocho.onclick = function(e){
-        resultado.textContent = resultado.textContent + "8";
-    }
-
-    nueve.onclick = function(e){
-        resultado.textContent = resultado.textContent + "9";
-    }
-
-    cero.onclick = function(e){
-        resultado.textContent = resultado.textContent + "0";
-    }
-
-    del.onclick = function(e){
+    del.onclick = function(e) {
         resultado.textContent = "";
         valorUno = 0;
         valorDos = 0;
         operacion = "";
     }
-    sum.onclick = function(e){
+    sum.onclick = function(e) {
         valorUno = resultado.textContent;
         operacion = "+";
         resultado.textContent = "";
     }
-    res.onclick = function(e){
+    res.onclick = function(e) {
         valorUno = resultado.textContent;
         operacion = "-";
         resultado.textContent = "";
     }
-    mul.onclick = function(e){
+    mul.onclick = function(e) {
         valorUno = resultado.textContent;
         operacion = "*";
         resultado.textContent = "";
     }
-    div.onclick = function(e){
+    div.onclick = function(e) {
         valorUno = resultado.textContent;
         operacion = "/";
         resultado.textContent = "";
     }
-    igual.onclick = function(e){
+    igual.onclick = function(e) {
         valorDos = resultado.textContent;
         var respuesta = 0;
-        switch(operacion){
-          case "+":
-            respuesta = parseFloat(valorUno) + parseFloat(valorDos); /* parsefloat conviertstring en flotantes*/
-            break;
-          case "-":
-            respuesta = parseFloat(valorUno) - parseFloat(valorDos);
-            break;
-          case "*":
-            respuesta = parseFloat(valorUno) * parseFloat(valorDos);
-            break;
-          case "/":
-            respuesta = parseFloat(valorUno) / parseFloat(valorDos);
-            break;
+        switch (operacion) {
+            case "+":
+                getFromCalc(SUMAR, valorUno, valorDos);
+                /*parseFloat(valorUno) + parseFloat(valorDos); /* parsefloat convier string en flotantes*/
+                break;
+            case "-":
+                getFromCalc(RESTAR, valorUno, valorDos);
+                /*respuesta = parseFloat(valorUno) - parseFloat(valorDos);*/
+                break;
+            case "*":
+                getFromCalc(MUL, valorUno, valorDos);
+                /*respuesta = parseFloat(valorUno) * parseFloat(valorDos);*/
+                break;
+            case "/":
+                if (valorDos != 0) {
+                    getFromCalc(DIV, valorUno, valorDos);
+                } else {
+                    resultado.textContent = 'Syntax Error';
+                }
+                /*respuesta = parseFloat(valorUno) / parseFloat(valorDos);*/
+                break;
         }
-        resultado.textContent = "";
-        valorUno = 0;
-        valorDos = 0;
-        operacion = "";
-        resultado.textContent = respuesta;
-
     }
+}
 
+function getFromCalc(operation, v1, v2) {
+    fetch(URL_API + operation + '/' + v1 + '/' + v2)
+        .then(response => response.json())
+        .then(data => {
+            resultado.textContent = data.resultado;
+        });
+}
+
+function addOnclickEvent(button, num) {
+    button.onclick = function(e) {
+        resultado.textContent = resultado.textContent + num;
+    }
 }

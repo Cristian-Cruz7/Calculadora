@@ -1,31 +1,37 @@
-.calc-container{
-    background-color: rgba(0,0,0,0.2);
-}
-.calc{
-    display:border;
-    margin:0 auto;
-    padding:20px;
+.calc-container {
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
-.calc,td{
+.calc {
+    display: border;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.calc,
+td {
     border: solid 1px black;
     border-collapse: collapse;
     padding: 5px;
 }
-.calc td button{
+
+.calc td button {
     display: block;
     width: 60px;
     height: 60px;
-    font-size:20px;
+    font-size: 20px;
 }
-#resultado{
+
+#resultado {
     display: block;
     text-align: right;
-    font-size: 40px;        
-    margin-bottom: 2px;    /* margen inferior*/
+    font-size: 40px;
+    margin-bottom: 2px;
+    /* margen inferior*/
     height: 40px;
-    line-height: 40px; /* texto tamaño de altura de los resultados*/
+    line-height: 40px;
+    /* texto tamaño de altura de los resultados*/
     background-color: white;
-    overflow-y: scroll; /*coloca un scroll en la parte horizontal del cuadro de resultados*/
-
+    overflow-y: scroll;
+    /*coloca un scroll en la parte horizontal del cuadro de resultados*/
 }
