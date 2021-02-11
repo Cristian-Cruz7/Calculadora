@@ -1,7 +1,13 @@
 from flask import Flask
 
+#APP_INSTANCE = False
 
-def create_app():
-    app = Flask(__name__)
+def get_app_instance():
+    # if APP_INSTANCE:       
+    #     return APP_INSTANCE    
+    # else:
+    #     APP_INSTANCE = Flask(__name__)        
+    #     return APP_INSTANCE
+    app  = Flask(__name__)
     
     return app
