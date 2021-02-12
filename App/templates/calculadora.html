@@ -1,82 +1,49 @@
 <html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename ='css/estilos.css')}}"
+    />
+  </head>
 
-<head>
-  <!--<link rel=”stylesheet” type=”text/css” href=”estilos.css”>-->
-  <link rel="stylesheet" href="{{ url_for('static', filename ='css/estilos.css')}}">
-</head>
-
-<body onload="init();">
-
-  <div>
-    <a href="{{ url_for('api') }}" class="regresar"><</a>
-  </div>
-  <!--<nav>
-    <ul>
-      <li><a href="{{ url_for('api_calc_sumar', num1=0, num2=0) }}">Suma</a></li>
-      <li><a href="{{ url_for('api_calc_restar', num1=0, num2=0) }}">Resta</a></li>
-      <li><a href="{{ url_for('api_calc_multiplicar', num1=0, num2=0) }}">Multiplicacion</a></li>
-      <li><a href="{{ url_for('api_calc_dividir', num1=0, num2=0) }}">Division</a></li>
-    </ul>
-  </nav>-->
-  <!--<li><a href="{{ url_for('api') }}">Regresar</a></li>-->
-  
-  <div class="calc-container">
-    <div> <h2> CALCULADORA </h2></div>
-    <table class="calc">
-      <tr>
-        <td colspan="4"><span id="resultado"></span></td>
-      </tr>
-      <tr>
-        <td><button id="sum">+</button></td>
-        <td><button id="res">-</button></td>
-        <td><button id="mul">*</button></td>
-        <td><button id="div">/</button></td>
-      </tr>
-      <tr>
-        <td><button id="siete">7</button></td>
-        <td><button id="ocho">8</button></td>
-        <td><button id="nueve">9</button></td>
-        <td><button id="del">C</button></td>
-      </tr>
-      <tr>
-        <td><button id="cuatro">4</button></td>
-        <td><button id="cinco">5</button></td>
-        <td><button id="seis">6</button></td>
-        <td><button id="igual">=</button></td>
-      </tr>
-      <tr>
-        <td><button id="uno">1</button></td>
-        <td><button id="dos">2</button></td>
-        <td><button id="tres">3</button></td>
-        <td><button id="cero">0</button></td>
-      </tr>
-    </table>
-  </div>
-
-  <script src="../static/funciones.js"></script>
-
-  <!-- etiqueta para colocar codigo js-->
-  <!--<script>
-            //console.log('Me gusta la programacion desde la consola')
-            //alert('Me gusta la programación python,js,html,css') 
-            let val1 = '0';
-            let val2 = '0';
-    
-            function sumar(){
-                const url = 'http://localhost:5000/api/calc/Suma/'
-                fetch(url + val1 + '/' + val2)
-                    .then(response => response.json())
-                    .then(data => console.log(data));
-            }
-    
-            function set_valor_1(numero){
-                val1 += numero
-            }
-    
-            function set_valor_2(numero){
-                val2 += numero
-            }
-        </script>-->
-</body>
-
+  <body onload="init();">
+    <div>
+      <a href="{{ url_for('api') }}" class="regresar"><</a>
+    </div>
+    <div class="calc-container">
+      <div>
+        <h2>CALCULADORA</h2>
+      </div>
+      <table class="calc">
+        <tr>
+          <td colspan="4"><span id="resultado"></span></td>
+        </tr>
+        <tr>
+          <td><button id="sum">+</button></td>
+          <td><button id="res">-</button></td>
+          <td><button id="mul">*</button></td>
+          <td><button id="div">/</button></td>
+        </tr>
+        <tr>
+          <td><button id="siete">7</button></td>
+          <td><button id="ocho">8</button></td>
+          <td><button id="nueve">9</button></td>
+          <td><button id="del">C</button></td>
+        </tr>
+        <tr>
+          <td><button id="cuatro">4</button></td>
+          <td><button id="cinco">5</button></td>
+          <td><button id="seis">6</button></td>
+          <td><button id="igual">=</button></td>
+        </tr>
+        <tr>
+          <td><button id="uno">1</button></td>
+          <td><button id="dos">2</button></td>
+          <td><button id="tres">3</button></td>
+          <td><button id="cero">0</button></td>
+        </tr>
+      </table>
+    </div>
+    <script src="../static/funciones.js"></script>
+  </body>
 </html>

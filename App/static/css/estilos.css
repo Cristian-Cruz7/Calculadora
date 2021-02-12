@@ -1,11 +1,9 @@
 body {
-  background-color: rgba(185, 196, 185 , 0.2);
+  background-color: rgba(185, 196, 185, 0.2);
 }
 
 .calc-container {
   display: block;
-  /*background-color: rgba(185, 196, 185 , 0.2);*/
- 
 }
 
 h2 {
@@ -13,18 +11,17 @@ h2 {
 }
 
 .calc {
-  margin:0 auto;
-  padding:20px;
+  margin: 0 auto;
+  padding: 20px;
   background-color: rgba(63, 80, 241, 0.4);
-  width:300px;
-  height:300px;
+  width: 300px;
+  height: 300px;
   border-radius: 10px;
   padding: 20px;
   user-select: none;
 }
 
 .calc, td {
-  
   border-collapse: collapse;
   padding: 5px;
 }
@@ -35,18 +32,17 @@ h2 {
   width: 60px;
   height: 60px;
   font-size: 20px;
-  
 }
 
 #resultado {
   display: block;
   text-align: right;
   font-size: 40px;
-  margin-bottom: 2px; /* margen inferior*/
+  margin-bottom: 2px;    /* margen inferior*/
   height: 40px;
-  line-height: 40px;  /* texto tamaño de altura de los resultados*/
+  line-height: 40px;    /* texto tamaño de altura de los resultados*/
   background-color: white;
-  overflow-y: scroll; /*coloca un scroll en la parte horizontal del cuadro de resultados*/
+  overflow-y: scroll;    /*coloca un scroll en la parte horizontal del cuadro de resultados*/
 }
 
 .regresar {
@@ -58,5 +54,5 @@ h2 {
   text-align: center;
   font-weight: bold;
   border: solid 1px black;
-  background-color: rgba(63, 80, 241, 0.2);;
+  background-color: rgba(63, 80, 241, 0.2);
 }
