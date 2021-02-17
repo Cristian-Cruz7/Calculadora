@@ -1,49 +1,49 @@
 <html>
-  <head>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename ='css/estilos.css')}}"
-    />
-  </head>
 
-  <body onload="init();">
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename ='css/estilos.css')}}" />
+</head>
+
+<body onload="init();">
+  <div>
+    <a class="regresar" href="{{ url_for('api') }}">
+      <</a>
+  </div>
+  <div class="calc-container">
     <div>
-      <a href="{{ url_for('api') }}" class="regresar"><</a>
+      <h2>CALCULADORA</h2>
     </div>
-    <div class="calc-container">
-      <div>
-        <h2>CALCULADORA</h2>
-      </div>
-      <table class="calc">
-        <tr>
-          <td colspan="4"><span id="resultado"></span></td>
-        </tr>
-        <tr>
-          <td><button id="sum">+</button></td>
-          <td><button id="res">-</button></td>
-          <td><button id="mul">*</button></td>
-          <td><button id="div">/</button></td>
-        </tr>
-        <tr>
-          <td><button id="siete">7</button></td>
-          <td><button id="ocho">8</button></td>
-          <td><button id="nueve">9</button></td>
-          <td><button id="del">C</button></td>
-        </tr>
-        <tr>
-          <td><button id="cuatro">4</button></td>
-          <td><button id="cinco">5</button></td>
-          <td><button id="seis">6</button></td>
-          <td><button id="igual">=</button></td>
-        </tr>
-        <tr>
-          <td><button id="uno">1</button></td>
-          <td><button id="dos">2</button></td>
-          <td><button id="tres">3</button></td>
-          <td><button id="cero">0</button></td>
-        </tr>
-      </table>
-    </div>
-    <script src="../static/funciones.js"></script>
-  </body>
+    <table class="calc">
+      <tr>
+        <td colspan="4"><span id="resultado"></span></td>
+      </tr>
+      <tr>
+        <td><button id="sum">+</button></td>
+        <td><button id="res">-</button></td>
+        <td><button id="mul">*</button></td>
+        <td><button id="div">/</button></td>
+      </tr>
+      <tr>
+        <td><button id="siete">7</button></td>
+        <td><button id="ocho">8</button></td>
+        <td><button id="nueve">9</button></td>
+        <td><button id="del">C</button></td>
+      </tr>
+      <tr>
+        <td><button id="cuatro">4</button></td>
+        <td><button id="cinco">5</button></td>
+        <td><button id="seis">6</button></td>
+        <td><button id="igual">=</button></td>
+      </tr>
+      <tr>
+        <td><button id="uno">1</button></td>
+        <td><button id="dos">2</button></td>
+        <td><button id="tres">3</button></td>
+        <td><button id="cero">0</button></td>
+      </tr>
+    </table>
+  </div>
+  <script src="../static/funciones.js"></script>
+</body>
+
 </html>

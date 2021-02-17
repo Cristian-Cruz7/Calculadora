@@ -18,10 +18,22 @@ h2 {
   height: 300px;
   border-radius: 10px;
   padding: 20px;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
   user-select: none;
+  /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
-.calc, td {
+.calc,
+td {
   border-collapse: collapse;
   padding: 5px;
 }
@@ -38,11 +50,14 @@ h2 {
   display: block;
   text-align: right;
   font-size: 40px;
-  margin-bottom: 2px;    /* margen inferior*/
+  margin-bottom: 2px;
+  /* margen inferior*/
   height: 40px;
-  line-height: 40px;    /* texto tamaño de altura de los resultados*/
+  line-height: 40px;
+  /* texto tamaño de altura de los resultados*/
   background-color: white;
-  overflow-y: scroll;    /*coloca un scroll en la parte horizontal del cuadro de resultados*/
+  overflow-y: scroll;
+  /*coloca un scroll en la parte horizontal del cuadro de resultados*/
 }
 
 .regresar {

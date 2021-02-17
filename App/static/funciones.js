@@ -10,7 +10,6 @@ const DIV = 'dividir';
 
 function init() {
   //variables
-
   const resultado = document.getElementById("resultado");
   const button1 = document.getElementById("uno");
   const button2 = document.getElementById("dos");
@@ -31,10 +30,6 @@ function init() {
 
   //eventos
   addOnclickEvent(button1, '1');
-  /*uno.onclick = function(e) { //al hacer clic en el boton, la funcion recibe el evento "e", luego a la variable
-          resultado.textContent = resultado.textContent + "1"; //resultado, le da el valor que tiene almacenado, pero
-      } // le suma un uno a los datos ya almacenados*/
-
   addOnclickEvent(button2, '2');
   addOnclickEvent(button3, '3');
   addOnclickEvent(button4, '4');
@@ -46,47 +41,44 @@ function init() {
   addOnclickEvent(button0, '0');
 
 
-  del.onclick = function (e) {
+  del.onclick = function(e) {
     resultado.textContent = "";
     valorUno = 0;
     valorDos = 0;
     operacion = "";
   }
-  sum.onclick = function (e) {
+  sum.onclick = function(e) {
     valorUno = resultado.textContent;
     operacion = "+";
     resultado.textContent = "";
   }
-  res.onclick = function (e) {
+  res.onclick = function(e) {
     valorUno = resultado.textContent;
     operacion = "-";
     resultado.textContent = "";
   }
-  mul.onclick = function (e) {
+  mul.onclick = function(e) {
     valorUno = resultado.textContent;
     operacion = "*";
     resultado.textContent = "";
   }
-  div.onclick = function (e) {
+  div.onclick = function(e) {
     valorUno = resultado.textContent;
     operacion = "/";
     resultado.textContent = "";
   }
-  igual.onclick = function (e) {
+  igual.onclick = function(e) {
     valorDos = resultado.textContent;
     var respuesta = 0;
     switch (operacion) {
       case "+":
         getFromCalc(SUMAR, valorUno, valorDos);
-        /*parseFloat(valorUno) + parseFloat(valorDos); /* parsefloat convier string en flotantes*/
         break;
       case "-":
         getFromCalc(RESTAR, valorUno, valorDos);
-        /*respuesta = parseFloat(valorUno) - parseFloat(valorDos);*/
         break;
       case "*":
         getFromCalc(MUL, valorUno, valorDos);
-        /*respuesta = parseFloat(valorUno) * parseFloat(valorDos);*/
         break;
       case "/":
         if (valorDos != 0) {
@@ -94,7 +86,6 @@ function init() {
         } else {
           resultado.textContent = 'Syntax Error';
         }
-        /*respuesta = parseFloat(valorUno) / parseFloat(valorDos);*/
         break;
     }
   }
@@ -109,7 +100,7 @@ function getFromCalc(operation, v1, v2) {
 }
 
 function addOnclickEvent(button, num) {
-  button.onclick = function (e) {
+  button.onclick = function(e) {
     resultado.textContent = resultado.textContent + num;
   }
 }
