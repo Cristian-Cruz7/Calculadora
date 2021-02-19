@@ -10,23 +10,23 @@ const DIV = 'dividir';
 
 function init() {
   //variables
-  const resultado = document.getElementById("resultado");
-  const button1 = document.getElementById("uno");
-  const button2 = document.getElementById("dos");
-  const button3 = document.getElementById("tres");
-  const button4 = document.getElementById("cuatro");
-  const button5 = document.getElementById("cinco");
-  const button6 = document.getElementById("seis");
-  const button7 = document.getElementById("siete");
-  const button8 = document.getElementById("ocho");
-  const button9 = document.getElementById("nueve");
-  const button0 = document.getElementById("cero");
-  const sum = document.getElementById("sum");
-  const res = document.getElementById("res");
-  const mul = document.getElementById("mul");
-  const div = document.getElementById("div");
-  const del = document.getElementById("del");
-  const igual = document.getElementById("igual");
+  const resultado = document.getElementsByClassName("resultado")[0];
+  const button1 = document.getElementsByClassName("uno" [0]);
+  const button2 = document.getElementsByClassName("dos" [0]);
+  const button3 = document.getElementsByClassName("tres" [0]);
+  const button4 = document.getElementsByClassName("cuatro" [0]);
+  const button5 = document.getElementsByClassName("cinco" [0]);
+  const button6 = document.getElementsByClassName("seis" [0]);
+  const button7 = document.getElementsByClassName("siete" [0]);
+  const button8 = document.getElementsByClassName("ocho" [0]);
+  const button9 = document.getElementsByClassName("nueve" [0]);
+  const button0 = document.getElementsByClassName("cero" [0]);
+  const sum = document.getElementsByClassName("sum" [0]);
+  const res = document.getElementsByClassName("res" [0]);
+  const mul = document.getElementsByClassName("mul" [0]);
+  const div = document.getElementsByClassName("div" [0]);
+  const del = document.getElementsByClassName("del" [0]);
+  const igual = document.getElementsByClassName("igual" [0]);
 
   //eventos
   addOnclickEvent(button1, '1');
