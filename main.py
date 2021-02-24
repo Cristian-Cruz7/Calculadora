@@ -1,5 +1,5 @@
 """
-Archivo principal de la aplicacion en el cual la app, y los
+Archivo principal de la aplicacion en el cual se crea la app, y los
 modulos de funcionamiento de la misma.
 """
 
